@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.swx.easypan.mapper.FileInfoMapper">
+    <select id="selectPageInfo" parameterType="com.swx.easypan.entity.query.FileInfoQuery" resultType="com.swx.easypan.pojo.FileInfo">
+        SELECT *
+        FROM file_info fi
+        <where>
+            <if test="query.userId != null">
+                and fi.user_id = #{query.userId}
+            </if>
+            <if test="query.fileMd5 != null and query.fileMd5 != ''">
+                and fi.file_md5 = #{query.fileMd5}
+            </if>
+            <if test="query.filePid != null and query.filePid != ''">
+                and fi.file_pid = #{query.filePid}
+            </if>
+            <if test="query.filename != null and query.filename != ''">
+                and fi.filename like CONCAT('%', #{query.filename}, '%')
+            </if>
+            <if test="query.fileCategory != null">
+                and fi.file_category = #{query.fileCategory}
+            </if>
+            <if test="query.deleted != null">
+                and fi.deleted = #{query.deleted}
+            </if>
+        </where>
+        <if test="query.orderBy != null and query.orderBy!= ''">
+            ORDER BY ${query.orderBy}
+        </if>
+    </select>
+
+    <select id="selectUseSpace" resultType="long">
+        SELECT IFNULL(SUM(file_size), 0)
+        FROM file_info
+        WHERE user_id = #{userId}
+    </select>
+
+    <update id="updateFileDelFlagBatch">
+        UPDATE file_info
+        <set>
+            <if test="bean.filePid != null">
+                file_pid = #{bean.filePid},
+            </if>
+            <if test="bean.recoveryTime != null">
+                recovery_time = #{bean.recoveryTime},
+            </if>
+            <if test="bean.deleted != null">
+                deleted = #{bean.deleted},
+            </if>
+            <if test="bean.updateTime != null">
+                update_time = #{bean.updateTime}
+            </if>
+        </set>
+        WHERE user_id = #{userId}
+        <if test="pidList != null">
+            and file_pid in(<foreach collection="pidList" separator="," item="item">#{item}</foreach>)
+        </if>
+        <if test="idList != null">
+            and id in(<foreach collection="idList" separator="," item="item">#{item}</foreach>)
+        </if>
+        <if test="oldDelFlag != null">
+            and deleted = #{oldDelFlag}
+        </if>
+    </update>
+
+    <delete id="delFileBatch">
+        delete from file_info
+       <where>
+           <if test="userId != null">
+               and user_id = #{userId}
+           </if>
+           <if test="pidList != null">
+               and file_pid in(<foreach collection="pidList" separator="," item="item">#{item}</foreach>)
+           </if>
+           <if test="idList != null">
+               and id in(<foreach collection="idList" separator="," item="item">#{item}</foreach>)
+           </if>
+           <if test="oldDelFlag != null">
+               and deleted = #{oldDelFlag}
+           </if>
+       </where>
+    </delete>
+</mapper>

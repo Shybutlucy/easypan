@@ -1,0 +1,42 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --color-primary: green;
+}
+body,
+html {
+  height: 100%;
+}
+ol,
+ul {
+  list-style: none outside none;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+img {
+  vertical-align: middle;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'tnum';
+}
+.text-ellip {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+i {
+  font-style: normal;
+}
+.icons-full_screen {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjM0Q0NzU3IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zIDNoMXY0SDN6Ii8+PHBhdGggZD0iTTMgM2g0djFIM3ptMTAgMTBoLTFWOWgxeiIvPjxwYXRoIGQ9Ik0xMyAxM0g5di0xaDR6Ii8+PC9nPjwvc3ZnPg==);
+}

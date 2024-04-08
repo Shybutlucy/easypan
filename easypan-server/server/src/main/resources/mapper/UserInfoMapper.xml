@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.swx.easypan.mapper.UserInfoMapper">
+    <update id="updateUserSpace">
+        update user_info
+        <set>
+            <if test="useSpace!=null">
+                use_space = use_space + #{useSpace}
+            </if>
+            <if test="totalSpace!=null">
+                total_space = total_space + #{totalSpace}
+            </if>
+        </set>
+        where id = #{userId}
+        <if test="useSpace!=null">
+            and <![CDATA[ (use_space + #{useSpace}) <= total_space ]]>
+        </if>
+        <if test="totalSpace!=null">
+            and <![CDATA[ (total_space + #{totalSpace}) >= use_space ]]>
+        </if>
+    </update>
+</mapper>

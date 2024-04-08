@@ -1,0 +1,122 @@
+.file-list {
+  &.overflow-visible {
+    :deep(.el-table) {
+      .el-table__cell,
+      .cell {
+        overflow: visible;
+      }
+    }
+  }
+  :deep(.el-table__row:hover) {
+    .file-name .text {
+      max-width: calc(100% - 150px);
+    }
+    .hover-show {
+      display: block !important;
+    }
+    .hover-hidden {
+      display: none !important;
+    }
+  }
+
+  .file-item {
+    display: flex;
+    align-items: center;
+
+    .file-name {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      .text {
+        max-width: 100%;
+        padding-left: 12px;
+        line-height: 40px;
+        overflow: hidden;
+        display: inline-block;
+        text-overflow: ellipsis;
+        cursor: pointer;
+
+        &:hover {
+          color: #06a7ff;
+        }
+      }
+    }
+
+    .edit-panel {
+      margin-left: 5px;
+
+      .edit-action {
+        vertical-align: middle;
+        margin-left: 6px;
+        display: inline-block;
+        background-color: #06a7ff;
+        border-radius: 4px;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        color: #fff;
+      }
+    }
+  }
+}
+.main-empty {
+  margin: auto 0;
+
+  .u-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 40px 0;
+
+    .empty-description {
+      margin-top: 20px;
+
+      .text {
+        font-size: 12px;
+        color: #818999;
+        line-height: 12px;
+      }
+    }
+
+    .empty-bottom {
+      margin-top: 20px;
+      .empty-action {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .action-item {
+          background-color: #f7f9fc;
+          border: unset;
+          width: 94px;
+          height: 94px;
+          margin: 0 8px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+
+          .action-item-image {
+            border: unset;
+            margin-top: 16px;
+          }
+
+          .action-item-text {
+            flex: 1;
+            font-size: 12px;
+            line-height: 12px;
+            color: #495366;
+            margin-top: 8px;
+            margin-bottom: 16px;
+          }
+        }
+      }
+    }
+  }
+}
