@@ -23,6 +23,34 @@
 
 
 
+## 项目预览
+
+登陆页面
+
+![](https://gcore.jsdelivr.net/gh/sx-code/tuchuang@main/easypan/easypan-login.png)
+
+主页面
+
+![](https://gcore.jsdelivr.net/gh/sx-code/tuchuang@main/easypan/easypan-index.png)
+
+图片预览
+
+![](https://gcore.jsdelivr.net/gh/sx-code/tuchuang@main/easypan/easypan-image.png)
+
+音乐播放
+
+![](https://gcore.jsdelivr.net/gh/sx-code/tuchuang@main/easypan/easypan-music.png)
+
+文件预览
+
+![](https://gcore.jsdelivr.net/gh/sx-code/tuchuang@main/easypan/easypan-text.png)
+
+视频播放
+
+![](https://gcore.jsdelivr.net/gh/sx-code/tuchuang@main/easypan/easypan-video.png)
+
+
+
 ## 启动项目
 
 ### 目录说明
@@ -63,31 +91,7 @@ npm run build
 npm run lint
 ```
 
-## 项目预览
 
-登陆页面
-
-![](https://gcore.jsdelivr.net/gh/sx-code/tuchuang@main/easypan/easypan-login.png)
-
-主页面
-
-![](https://gcore.jsdelivr.net/gh/sx-code/tuchuang@main/easypan/easypan-index.png)
-
-图片预览
-
-![](https://gcore.jsdelivr.net/gh/sx-code/tuchuang@main/easypan/easypan-image.png)
-
-音乐播放
-
-![](https://gcore.jsdelivr.net/gh/sx-code/tuchuang@main/easypan/easypan-music.png)
-
-文件预览
-
-![](https://gcore.jsdelivr.net/gh/sx-code/tuchuang@main/easypan/easypan-text.png)
-
-视频播放
-
-![](https://gcore.jsdelivr.net/gh/sx-code/tuchuang@main/easypan/easypan-video.png)
 
 ### 启动后端
 
